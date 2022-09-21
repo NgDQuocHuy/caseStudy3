@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +77,8 @@
                                                     <p class="font-20 font-weight-medium">Price</p>
                                                 </td>
                                                 <td>
-                                                    <p class="font-20 font-weight-medium text-pink">${orderDetail.getTotalPrice()}</p>
+                                                    <fmt:setLocale value = "vi_VN"/>
+                                                    <p class="font-20 font-weight-medium text-pink"><fmt:formatNumber value = "${orderDetail.getTotalPrice()}" type = "currency"/></p>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -84,7 +86,7 @@
                                                     <p class="font-20 font-weight-medium">Total Price</p>
                                                 </td>
                                                 <td>
-                                                    <p class="font-20 font-weight-medium text-pink">${orderDetail.getTotalPrice() * orderDetail.getQuantity()}</p>
+                                                    <p class="font-20 font-weight-medium text-pink"><fmt:formatNumber value = "${orderDetail.getTotalPrice() * orderDetail.getQuantity()}" type = "currency"/></p>
                                                 </td>
                                             </tr>
                                             <tr>
